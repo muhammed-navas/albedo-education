@@ -24,3 +24,4 @@ export const AddButton = ({bgColor , textColor , hover ,onClick}) => {
       </button>
     )
   }
+

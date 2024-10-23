@@ -30,7 +30,7 @@ export const Student = () => {
             <Edit width='w-10' height='h-10' />
         </TableStudentsDataWithEdit>
         <AddButton onClick={onClick} />
-        {showPopup && <StudentAddPopup />}
+        {showPopup && <StudentAddPopup setShowPopup={setShowPopup} />}
     </TableMainBox>
   )
 }
