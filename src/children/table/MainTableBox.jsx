@@ -38,9 +38,9 @@ export const TableFieldItems = ({title}) => {
       </div>
     )
   }
-  export const TableStudentsData = ({children}) => {
+  export const TableStudentsData = ({children,setShowPopup1}) => {
     return (
-      <div className="bg-white rounded-xl cursor-pointer w-full lg:w-[87%] py-3 px-4 gap-4 flex justify-between items-center  ">
+      <div onClick={()=>setShowPopup1(true)} className="bg-white rounded-xl cursor-pointer w-full lg:w-[87%] py-3 px-4 gap-4 flex justify-between items-center  ">
          {children}
       </div>
     )

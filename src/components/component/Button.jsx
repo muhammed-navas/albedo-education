@@ -25,3 +25,8 @@ export const AddButton = ({bgColor , textColor , hover ,onClick}) => {
     )
   }
 
+  export const ButtonIDCard = ({title,bgColor , textColor}) => {
+    return (
+      <button className={`px-4 py-1 w-fit h-fit text-xs rounded-full ${bgColor} ${textColor} `}>{title}</button>
+    )
+  }
