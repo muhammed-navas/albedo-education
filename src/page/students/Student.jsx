@@ -7,10 +7,12 @@ import teacher from '../../../public/teacher.png'
 import mentor from '../../../public/mentor.png'
 import { AddButton, ButtonStatus } from '../../components/component/Button'
 import { Subject } from '../../components/component/Subject'
-import { StudentAddPopup } from '../../popup/StudentAddPopup'
+import { StudentAddPopup } from '../../popup/students/StudentAddPopup'
+import { StudentsDtailsPopup } from '../../popup/students/StudentsDtailsPopup'
 
 export const Student = () => {
     const [ showPopup,setShowPopup] = useState(false)
+    const [ showPopup1,setShowPopup1] = useState(false)
     const onClick = () =>{
         setShowPopup(true)
     }
@@ -19,7 +21,7 @@ export const Student = () => {
         <TableNavigationBar values={["Active","Upcoming","Pending","Completed"]} />
         <TableFieldItems title={["Sl no","Studnts","Subject","Teacher","Mentor","Status","action"]} />
         <TableStudentsDataWithEdit >
-            <TableStudentsData >
+            <TableStudentsData setShowPopup1={setShowPopup1} >
                 <h4>ALB/45039</h4>
                 <PersonData img={student} name='Student' more='student@gmail.com' />
                 <Subject languages={["ENGLISH","MATHS","HINDI"]} />
@@ -31,6 +33,7 @@ export const Student = () => {
         </TableStudentsDataWithEdit>
         <AddButton onClick={onClick} />
         {showPopup && <StudentAddPopup setShowPopup={setShowPopup} />}
+        {showPopup1 && <StudentsDtailsPopup />}
     </TableMainBox>
   )
 }
