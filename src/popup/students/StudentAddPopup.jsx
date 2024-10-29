@@ -9,7 +9,7 @@ import { Button } from '../../components/component/Button'
 export const StudentAddPopup = ({setShowPopup}) => {
   const [selectMode ,setSelectMode ] = useState(0)
   return (
-    <PopupBackground maxH='max-h-[35rem]' >
+    <PopupBackground maxH='max-h-[35rem]' width="w-fit" >
         {/* <ResponsiveGrid lg="grid-cols-2" normal="grid-cols-1" > */}
         <div className='flex justify-between items-center'>
         <h3 className='text-sm font-bold text-start py-2'>Add New Student</h3>

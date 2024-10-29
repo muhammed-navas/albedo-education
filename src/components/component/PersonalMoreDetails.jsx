@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { ButtonIDCard } from "../component/Button";
+import { CurrentStatus } from "./CurrentStatus";
+import { IdCard } from "./IdCard";
 
 export const PersonalMoreDetails = () => {
+  const [idCardHandle , setIdCardHandle] = useState(false)
   return (
     <div className=" border-b border-gray-400 pb-3">
       <div className="flex  items-center justify-between    gap-16">
@@ -22,7 +26,8 @@ export const PersonalMoreDetails = () => {
         <div>
         <h1 className="text-sm text-gray-400 my-2">Apr 2024 - March 2025</h1>
           <h5>243 hr</h5>
-          <ButtonIDCard title='Generate ID Card' bgColor='bg-gray-400'/>
+          <ButtonIDCard idCardClick={setIdCardHandle}  title='Generate ID Card' bgColor='bg-gray-400'/>
+        {idCardHandle && <IdCard setIdCardHandle={setIdCardHandle} />}
         </div>
       </div>
     </div>
@@ -32,7 +37,8 @@ export const PersonalMoreDetails = () => {
 
 export const PersonalMentorDetails = () => {
   return (
-    <div className="my-2">
+    <div className="my-2 flex gap-10 items-center">
+      <div>
     <h2 className="text-gray-500 mb-2">Mentor</h2>
     <div className="flex items-center gap-4">
       <div className="relative ">
@@ -47,6 +53,11 @@ export const PersonalMentorDetails = () => {
         <p className="text-sm text-gray-500">234678</p>
       </div>
     </div>
+      </div>
+      <div>
+    <h2 className="text-gray-500 mb-2">Current Status</h2>
+    <CurrentStatus />
+      </div>
   </div>
   )
 }

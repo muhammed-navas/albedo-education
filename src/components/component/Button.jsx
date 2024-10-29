@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoAddOutline } from "react-icons/io5";
 
 
-export const Button = ({title,bgColor , textColor , hover}) => {
+export const Button = ({title,bgColor , textColor , hover,}) => {
     return (
       <button className={`px-4 py-1 duration-500 rounded-full cursor-pointer ${hover} ${bgColor} ${textColor} `}>{title}</button>
     )
@@ -25,8 +25,8 @@ export const AddButton = ({bgColor , textColor , hover ,onClick}) => {
     )
   }
 
-  export const ButtonIDCard = ({title,bgColor , textColor}) => {
+  export const ButtonIDCard = ({title,bgColor , textColor,idCardClick}) => {
     return (
-      <button className={`px-4 py-1 w-fit h-fit text-xs rounded-full ${bgColor} ${textColor} `}>{title}</button>
+      <button onClick={()=>idCardClick(true)} className={`px-4 py-1 w-fit h-fit text-xs rounded-full ${bgColor} ${textColor} `}>{title}</button>
     )
   }
