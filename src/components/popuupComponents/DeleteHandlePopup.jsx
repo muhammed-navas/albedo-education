@@ -1,14 +1,17 @@
 import React from 'react'
 import { FiX } from 'react-icons/fi'
 import { BsTrash } from 'react-icons/bs'
+import { Close } from '../component/Close'
+import { useMyContext } from '../../context/MyContext'
 
 export const DeleteHandlePopup = () => {
+    const {setDeleteHandle} = useMyContext();
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
     <div className="relative bg-white rounded-3xl max-w-sm w-full p-6">
       {/* Close button */}
-      <button className="absolute right-4 top-4 text-gray-400 hover:text-gray-600">
-        <FiX className="w-5 h-5" />
+      <button className="absolute right-4 top-4 ">
+      <Close closeHandle={setDeleteHandle} />
       </button>
 
       {/* Icon */}

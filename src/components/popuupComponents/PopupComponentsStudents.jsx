@@ -1,5 +1,6 @@
 import React from "react";
 import { TableFieldItems, TableStudentsData, TableStudentsDataWithEdit } from "../../children/table/MainTableBox";
+import { useMyContext } from "../../context/MyContext";
 import { CurrentStatus } from "../component/CurrentStatus";
 import { DeleteWhiteBg } from "../component/DeleteWhiteBg";
 import { Edit } from "../component/Edit";
@@ -12,12 +13,14 @@ import {
 } from "../component/PersonalMoreDetails";
 import { PopupDelete } from "../component/PopupDelete";
 import { PopupEdit } from "../component/PopupEdit";
+import { DeleteHandlePopup } from "./DeleteHandlePopup";
 
 export const StudentDetailsPopupLeftSideItems = ({
   bgColor,
   setBgColor,
   sideData,
 }) => {
+  const {deleteHandle} = useMyContext();
   return (
     <div className="flex flex-col bg-gray-100 rounded-tl-2xl rounded-bl-2xl p-8 py-6 justify-between items-start ">
       <PersonalDetailsLeftSide
@@ -29,6 +32,7 @@ export const StudentDetailsPopupLeftSideItems = ({
         <PopupEdit />
         <PopupDelete />
       </div>
+      {deleteHandle && <DeleteHandlePopup />}
     </div>
   );
 };
