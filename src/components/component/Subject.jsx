@@ -19,12 +19,12 @@ export const Subject = ({ languages }) => {
         <h2 className="text-center">2ND STD</h2>
         <div className="flex items-center space-x-2">
           <FaChevronLeft
-            className="w-3 h-3 cursor-pointer text-gray-600 hover:text-black"
+            className="w-4 h-4 cursor-pointer text-gray-600 hover:text-black"
             onClick={handlePrev}
           />
           <p className=" w-16 font-bold text-sm text-center">{languages[currentIndex]}</p>
           <FaChevronRight
-            className="w-3 h-3 cursor-pointer text-gray-600 hover:text-black"
+            className="w-4 h-4 cursor-pointer text-gray-600 hover:text-black"
             onClick={handleNext}
           />
         </div>
