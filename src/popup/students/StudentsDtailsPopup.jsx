@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PersonalDetailsLeftAndRightSide } from "../../children/popup/PersonalDetailsLeftAndRightSide";
+import { Certificate } from "../../components/component/Certificate";
 import { Close } from "../../components/component/Close";
 import { StudentDetailsPopupLeftSideItems, StudentsPackageDetailsInPopup, StudentsPaymentDetailsInPopup, StudentsPersonalDetailsInPopup } from "../../components/popuupComponents/PopupComponentsStudents";
 
@@ -20,6 +21,7 @@ export const StudentsDtailsPopup = ({ setShowPopup1 }) => {
           {bgColor === 0 && <StudentsPersonalDetailsInPopup /> }
           {bgColor === 1 && <StudentsPackageDetailsInPopup/>}
           {bgColor === 2 && <StudentsPaymentDetailsInPopup/>}
+          {bgColor === 3 && <Certificate/>}
         </div>
       </div>
     </PersonalDetailsLeftAndRightSide>

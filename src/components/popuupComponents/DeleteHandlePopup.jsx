@@ -7,7 +7,7 @@ import { useMyContext } from '../../context/MyContext'
 export const DeleteHandlePopup = () => {
     const {setDeleteHandle} = useMyContext();
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/50 flex z-[9999999] items-center justify-center p-4">
     <div className="relative bg-white rounded-3xl max-w-sm w-full p-6">
       {/* Close button */}
       <button className="absolute right-4 top-4 ">

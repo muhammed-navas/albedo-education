@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaUserGraduate, FaClock, FaRupeeSign } from 'react-icons/fa'
+import { PopupDelete } from './PopupDelete'
 
 export const PackageData = () => {
   return (
@@ -96,6 +97,7 @@ export const PackageDataSmall = () => {
           <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             001
           </span>
+          <PopupDelete w='w-3' h='3' />
         </div>
 
         {/* Main Information */}

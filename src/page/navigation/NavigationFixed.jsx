@@ -18,7 +18,7 @@ export const Navigation = () => {
   return (
     <div className='relative'>
       {/* Left sidebar */}
-      <div className=' fixed lg:top-[55%] lg:bottom-auto w-3/4 lg:w-auto top-auto bottom-0 lg:left-0 left-[12%] transform -translate-y-1/2'>
+      <div className=' fixed lg:top-[55%] lg:bottom-auto w-3/4 lg:w-auto top-auto bottom-0 lg:left-0 left-[12%] z-[9] transform -translate-y-1/2'>
         <aside
           style={{ backgroundColor: '#793078' }}
           className="rounded-full lg:px-4 flex flex-row lg:flex-col items-center justify-center gap-4 lg:gap-0 py-3 lg:py-8 lg:space-y-6"

@@ -14,10 +14,10 @@ export const ButtonStatus = ({title,bgColor , textColor , hover}) => {
     )
   }
 
-export const AddButton = ({bgColor , textColor , hover ,onClick}) => {
+export const AddButton = ({bgColor , textColor , hover ,addHandle}) => {
     const [ hoverEffect , setHoverEffect] = useState(false)
     return (
-      <button onClick={onClick} onMouseEnter={()=>setHoverEffect(true)} onMouseLeave={()=>setHoverEffect(!hoverEffect)} className={`p-2 duration-500 bg-fuchsia-900  rounded-2xl absolute bottom-4 right-4 flex items-center text-white  cursor-pointer ${hover} ${bgColor} ${textColor} `}>
+      <button onClick={()=>addHandle(true)} onMouseEnter={()=>setHoverEffect(true)} onMouseLeave={()=>setHoverEffect(!hoverEffect)} className={`p-2 duration-500 bg-fuchsia-900  rounded-2xl absolute bottom-4 right-4 flex items-center text-white  cursor-pointer ${hover} ${bgColor} ${textColor} `}>
         <IoAddOutline className="lg:w-8 lg:h-8 w-4 h-4 duration-500 text-white" />
         {hoverEffect && <span className="duration-500"> Add</span> }
         

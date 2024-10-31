@@ -13,15 +13,12 @@ import { StudentsDtailsPopup } from '../../popup/students/StudentsDtailsPopup'
 export const Student = () => {
     const [ showPopup,setShowPopup] = useState(false)
     const [ showPopup1,setShowPopup1] = useState(false)
-    const onClick = () =>{
-        setShowPopup(true)
-    }
   return (
     <TableMainBox >
         <TableNavigationBar values={["Active","Upcoming","Pending","Completed"]} />
         <TableFieldItems title={["Sl no","Studnts","Subject","Teacher","Mentor","Status","action"]} />
         <TableStudentsDataWithEdit >
-            <TableStudentsData setShowPopup1={setShowPopup1} >
+            <TableStudentsData onclickHandle={setShowPopup1} >
                 <h4>ALB/45039</h4>
                 <PersonData img={student} name='Student' more='student@gmail.com' />
                 <Subject languages={["ENGLISH","MATHS","HINDI"]} />
@@ -31,7 +28,7 @@ export const Student = () => {
             </TableStudentsData>
             <Edit width='w-10' height='h-10' />
         </TableStudentsDataWithEdit>
-        <AddButton onClick={onClick} />
+        <AddButton addHandle={setShowPopup} />
         {showPopup && <StudentAddPopup setShowPopup={setShowPopup} />}
         {showPopup1 && <StudentsDtailsPopup setShowPopup1={setShowPopup1} />}
     </TableMainBox>
