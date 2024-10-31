@@ -33,25 +33,25 @@ export const Navigation = () => {
 
       {/* Right sidebar */}
       {isUsersOpen && (
-        <div className="absolute lg:left-[90px] lg:top-28 bottom-0 left-0 lg:w-auto w-3/4  lg:h-fit  rounded-full bg-blue-500 lg:py-14 py-3 px-1  flex lg:flex-col flex-row justify-center ">
+        <div className="fixed lg:left-[90px] lg:top-48 bottom-0 left-0 lg:w-auto w-3/4  lg:h-fit  rounded-full bg-blue-500 lg:py-14 py-3 px-1  flex lg:flex-col flex-row justify-center ">
           <div className="lg:space-y-8 flex lg:flex-col flex-row lg:gap-0 gap-4">
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center  cursor-pointer">
               <FaUser className="text-white h-5 w-5" />
               <h6 className="text-white text-[10px]">Student</h6>
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center cursor-pointer ">
               <FaChalkboardTeacher className="text-white h-5 w-5" />
               <h6 className="text-white text-[10px]">Teacher</h6>
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center cursor-pointer ">
               <FaUserFriends className="text-white h-5 w-5" />
               <h6 className="text-white text-[10px]">Mentor</h6>
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center  cursor-pointer">
               <FaUserShield className="text-white h-5 w-5" />
               <h6 className="text-white text-[10px]">Asst. Admin</h6>
             </div>
-            <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center  cursor-pointer">
               <FaUsersCog className="text-white h-5 w-5" />
               <h6 className="text-white text-[10px]">Others</h6>
             </div>
