@@ -30,3 +30,12 @@ export const AddButton = ({bgColor , textColor , hover ,addHandle}) => {
       <button onClick={()=>idCardClick(true)} className={`px-4 py-1 w-fit h-fit text-xs rounded-full ${bgColor} ${textColor} `}>{title}</button>
     )
   }
+  
+  export const ViewButton = ({textPosition,onclickHandle}) => {
+    return (
+      <div onClick={()=>onclickHandle(true)}  className="flex justify-end cursor-pointer">
+        <h6 className={`px-6 py-1 bg-blue-200 text-xs mt-4  rounded-2xl   ${textPosition}`}> View Details</h6>
+      </div>
+    )
+  }
+  

@@ -38,9 +38,9 @@ export const TableFieldItems = ({title}) => {
       </div>
     )
   }
-  export const TableStudentsData = ({children,onclickHandle}) => {
+  export const TableStudentsData = ({children,onclickHandle , w='w-[87%] '}) => {
     return (
-      <div onClick={()=>onclickHandle(true)} className="bg-white rounded-xl cursor-pointer w-full lg:w-[87%] py-3 px-4 gap-4 flex justify-between items-center  ">
+      <div onClick={()=>onclickHandle(true)} className={`bg-white rounded-xl cursor-pointer w-full lg:${w} py-3 px-4 gap-4 flex justify-between items-center `} >
          {children}
       </div>
     )

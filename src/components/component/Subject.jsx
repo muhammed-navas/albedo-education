@@ -17,7 +17,7 @@ export const Subject = ({ languages }) => {
     <div>
       <div>
         <h2 className="text-center">2ND STD</h2>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 justify-between">
           <FaChevronLeft
             className="w-4 h-4 cursor-pointer text-gray-600 hover:text-black"
             onClick={handlePrev}
