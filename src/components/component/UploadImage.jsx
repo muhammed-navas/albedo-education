@@ -21,7 +21,6 @@ export const UploadedImage = () => {
               className="w-full h-full rounded-full object-cover"
             />
           ) : (<>
-            {/* // Use label to trigger file input */}
             <IoCameraOutline />
             <input type="file" accept="image/*" onChange={handleImageUpload} hidden />
             </>

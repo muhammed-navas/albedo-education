@@ -41,7 +41,7 @@ export const PersonalMentorDetails = () => {
       <div>
     <h2 className="text-gray-500 mb-2">Mentor</h2>
     <div className="flex items-center gap-4">
-      <div className="relative ">
+      <div className=" ">
         <img
           src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=800"
           alt="Mr. Thomson"

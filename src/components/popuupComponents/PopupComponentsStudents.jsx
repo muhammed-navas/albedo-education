@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 import { TableFieldItems, TableStudentsData, TableStudentsDataWithEdit } from "../../children/table/MainTableBox";
 import { useMyContext } from "../../context/MyContext";
+import { AddButton } from "../component/Button";
 import { CurrentStatus } from "../component/CurrentStatus";
 import { DeleteWhiteBg } from "../component/DeleteWhiteBg";
 import { Edit } from "../component/Edit";
@@ -13,7 +15,9 @@ import {
 } from "../component/PersonalMoreDetails";
 import { PopupDelete } from "../component/PopupDelete";
 import { PopupEdit } from "../component/PopupEdit";
+import { AddPaymentDetails } from "./AddPaymentDetails";
 import { DeleteHandlePopup } from "./DeleteHandlePopup";
+import { PaymentDetails } from "./PaymentDetails";
 
 export const StudentDetailsPopupLeftSideItems = ({
   bgColor,
@@ -59,11 +63,13 @@ export const StudentsPackageDetailsInPopup = () => {
 };
 
 export const StudentsPaymentDetailsInPopup = () => {
+  const [ clickHandle , setClickHandle]= useState(false)
+  const [addClickHandle , setAddClickHandle ] = useState(false)
   return (
     <div className="bg-blue-100 p-4 rounded-xl">
         <TableFieldItems title={["Date","Package","Payment","Status","action"]} />
         <TableStudentsDataWithEdit>
-            <TableStudentsData>
+            <TableStudentsData onclickHandle={setClickHandle}>
                 <h1 className="font-semibold text-xs">30 Sep 2024</h1>
                 <div>
                     <h5 className="text-[10px] text-gray-600">2ND STD</h5>
@@ -81,7 +87,10 @@ export const StudentsPaymentDetailsInPopup = () => {
             <Edit />
             <DeleteWhiteBg />
             </div>
+            {clickHandle && < PaymentDetails setClickHandle={setClickHandle}  />}
         </TableStudentsDataWithEdit>
+        <AddButton addHandle={setAddClickHandle} />
+        {addClickHandle && <AddPaymentDetails setAddClickHandle={setAddClickHandle} />}
     </div>
   );
 };
