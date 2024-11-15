@@ -143,10 +143,10 @@ export const HomePage = () => {
             <ExpenseRatio />
           </div>
           <div className="bg-gray-200 rounded-3xl p-6">
-            <AllDataPreview title='Students' Totaodata='500' path='#' />
+            <AllDataPreview title='Students' Totaodata='500' path='#' gcolor='#132092' />
           </div>
           <div className="bg-gray-200  rounded-3xl p-6">
-            <AllDataPreview title='Teacher' Totaodata='200' path='#' />
+            <AllDataPreview title='Teacher' Totaodata='200' path='#' gcolor='#5967e1' />
           </div>
         </div>
         <div className="rounded-3xl ">
@@ -162,7 +162,7 @@ export const HomePage = () => {
         ))}
         </div>
         <div className="bg-gray-200  rounded-3xl p-6">
-            <AllDataPreview title='Teacher' Totaodata='200' path='#' />
+            <AllDataPreview title='Teacher' Totaodata='200' path='#' gcolor='#5967e1' />
           </div>
       </div>
     </div>
