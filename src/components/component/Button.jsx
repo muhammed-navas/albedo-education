@@ -24,6 +24,13 @@ export const AddButton = ({bgColor , textColor , hover ,addHandle}) => {
       </button>
     )
   }
+export const AddButtonWithoutText = ({bgColor , textColor , hover ,addHandle}) => {
+    return (
+      <button onClick={()=>addHandle(true)}  className={`p-2 duration-500 bg-fuchsia-900  rounded-2xl absolute bottom-4 right-4 flex items-center text-white  cursor-pointer ${hover} ${bgColor} ${textColor} `}>
+        <IoAddOutline className="lg:w-8 lg:h-8 w-4 h-4 duration-500 text-white" />        
+      </button>
+    )
+  }
 
   export const ButtonIDCard = ({title,bgColor , textColor,idCardClick}) => {
     return (
