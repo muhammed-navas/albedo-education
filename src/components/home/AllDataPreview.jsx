@@ -11,7 +11,7 @@ const data = [
   { value: 500 },
 ]
 
-export default function AllDataPreview( {title,path,Totaodata}) {
+export default function AllDataPreview( {title,gcolor,Totaodata ,path}) {
   return (
     <div className="w-full ">
       <div className="rounded-3xl  relative">
@@ -49,7 +49,7 @@ export default function AllDataPreview( {title,path,Totaodata}) {
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke="#9333ea"
+                stroke={gcolor}
                 strokeWidth={2}
                 fill="url(#colorValue)"
                 dot={false}
