@@ -12,10 +12,10 @@ export const BoxTopHeadSection = ({ mTitle, fTitle,prop,grid }) => {
        <h6 className="text-xs text-gray-500">{mTitle  }</h6>
         <h1 className="text-lg font-semibold text-gray-800">{fTitle}</h1>
       </div>
-      {grid === '1' && <div className="bg-gray-300 rounded-2xl px-2 py-0.5 flex items-center gap-1">
+      {grid === '1' && <div className="bg-gray-300 rounded-2xl px-2  flex items-center gap-1">
 
 { prop?.map((item,i)=>
-<button key={i} onClick={()=>setButtonHandle(i)} className={`${buttonHandle === i ? 'bg-gray-100':""} rounded-2xl px-2  text-[10px]`}>{item}</button>
+<button key={i} onClick={()=>setButtonHandle(i)} className={`${buttonHandle === i ? 'bg-gray-100':""} rounded-2xl px-2 py-0.5 text-[10px]`}>{item}</button>
 )}
 </div> }
       

@@ -7,7 +7,7 @@ export const SingleBox = ({title,name,more,color,grid,btn}) => {
   return (
     <div className="space-y-4 cursor-pointer">
       <div
-        className={`flex items-center  rounded-lg  ${grid === '1'? ' border border-gray-300 p-4':'p-0'} transition-colors duration-200 `}
+        className={`flex items-center  rounded-lg  ${grid === '1'? ' bg-white rounded-xl p-4':'p-0'} transition-colors duration-200 `}
       >
         <div className={`mr-4 flex h-8 w-8 items-center justify-center rounded-full ${color}`}>
         <CgProfile />

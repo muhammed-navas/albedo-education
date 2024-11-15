@@ -133,6 +133,20 @@ const boxDatAOne = [
     }
   }
 ];
+const data = [
+  { value: 300 },
+  { value: 150 },
+  { value: 700 },
+  { value: 350 },
+  { value: 500 },
+]
+const dataOne = [
+  { value: 300 },
+  { value: 250 },
+  { value: 400 },
+  { value: 250 },
+  { value: 500 },
+]
 
 export const HomePage = () => {
   return (
@@ -142,11 +156,11 @@ export const HomePage = () => {
           <div className="bg-gray-200 col-span-2 rounded-3xl p-2">
             <ExpenseRatio />
           </div>
-          <div className="bg-gray-200 rounded-3xl p-6">
-            <AllDataPreview title='Students' Totaodata='500' path='#' gcolor='#132092' />
+          <div className="bg-gray-200 rounded-3xl ">
+            <AllDataPreview title='Students' Totaodata='500' data={data} path='#' gcolor='#132092' />
           </div>
-          <div className="bg-gray-200  rounded-3xl p-6">
-            <AllDataPreview title='Teacher' Totaodata='200' path='#' gcolor='#5967e1' />
+          <div className="bg-gray-200  rounded-3xl ">
+            <AllDataPreview title='Teacher' Totaodata='200' data={dataOne} path='#' gcolor='#5967e1' />
           </div>
         </div>
         <div className="rounded-3xl ">
@@ -161,8 +175,8 @@ export const HomePage = () => {
           <DataDisplayMainBox key={index} data={boxData} grid='2' />
         ))}
         </div>
-        <div className="bg-gray-200  rounded-3xl p-6">
-            <AllDataPreview title='Teacher' Totaodata='200' path='#' gcolor='#5967e1' />
+        <div className="bg-gray-200  rounded-3xl ">
+            <AllDataPreview title='Teacher' Totaodata='200' data={data} path='#' gcolor='#5967e1' />
           </div>
       </div>
     </div>

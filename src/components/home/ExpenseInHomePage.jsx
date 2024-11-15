@@ -16,7 +16,7 @@ export default function ExpenseRatio() {
 
   return (
     <div className="w-full max-w-4xl ">
-      <div className="bg-transparent rounded-3xl ">
+      <div className="bg-transparent rounded-3xl h-auto lg:h-[13rem] ">
         <div className="p-4 space-y-4">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
@@ -49,7 +49,7 @@ export default function ExpenseRatio() {
           </div>
         </div>
         <div className="">
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={200}>
             <LineChart
               data={data}
               margin={{ top: 20, right: 20, bottom: 20, left: 20 }}

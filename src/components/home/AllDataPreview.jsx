@@ -1,22 +1,20 @@
+import { useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs'
 import { FaGraduationCap } from 'react-icons/fa'
 import { Area, AreaChart, ResponsiveContainer } from 'recharts'
 // import {Link} from 'react-router-dom'
 
-const data = [
-  { value: 300 },
-  { value: 150 },
-  { value: 400 },
-  { value: 350 },
-  { value: 500 },
-]
 
-export default function AllDataPreview( {title,gcolor,Totaodata ,path}) {
+const timeRanges = ["This Week", "This Month", "This Year"]
+
+export default function AllDataPreview( {title,gcolor,Totaodata ,path ,data}) {
+  const [timeRange, setTimeRange] = useState(timeRanges[0]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   return (
     <div className="w-full ">
       <div className="rounded-3xl  relative">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className=" relative flex items-center justify-between mb-8 p-6">
           <div className="flex items-center gap-3">
             <div className="bg-purple-600 p-2 rounded-lg">
               <FaGraduationCap className="h-5 w-5 text-white" />
@@ -26,11 +24,27 @@ export default function AllDataPreview( {title,gcolor,Totaodata ,path}) {
               <p className="text-gray-600 text-sm">{title}</p>
             </div>
           </div>
-          <button className="text-gray-600 hover:text-gray-800">
+          <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="text-gray-600 hover:text-gray-800">
             {/* <Link to={path} > */}
             <BsThreeDots className="h-5 w-5" />
             {/* </Link> */}
           </button>
+          {isDropdownOpen && (
+              <div className="absolute right-4 mt-2 top-12 w-20 bg-white rounded-lg shadow-lg py-1 z-10">
+                {timeRanges.map((range) => (
+                  <button
+                    key={range}
+                    className="w-full text-[10px] px-2 py-1 text-left hover:bg-gray-100"
+                    onClick={() => {
+                      setTimeRange(range)
+                      setIsDropdownOpen(false)
+                    }}
+                  >
+                    {range}
+                  </button>
+                ))}
+              </div>
+            )}
         </div>
 
         {/* Chart */}

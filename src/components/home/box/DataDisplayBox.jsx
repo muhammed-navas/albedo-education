@@ -25,7 +25,9 @@ const DataDisplayMainBox = ({ data , grid }) => {
         />
         ))}
         </div>
+        <div className='flex justify-end'>
         {grid === '1' && <Button title={data.button.label} /> }
+        </div>
       
     </div>
   );
