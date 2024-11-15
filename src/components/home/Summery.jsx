@@ -1,47 +1,50 @@
-import { useState } from 'react'
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
-import { IoMdArrowDropdown } from 'react-icons/io'
-import { FaMoneyBillWave } from 'react-icons/fa'
-import { RiMoneyDollarCircleLine } from 'react-icons/ri'
-import { BsCashStack } from 'react-icons/bs'
+import { useState } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { RiMoneyDollarCircleLine } from "react-icons/ri";
+import { BsCashStack } from "react-icons/bs";
 
-const timeRanges = ["This Week", "This Month", "This Year"]
+const timeRanges = ["This Week", "This Month", "This Year"];
 
 const donutData = [
-  { name: "To Pay", value: 2450, color: "#0ea5e9" },
-  { name: "To Collect", value: 2000, color: "#9333ea" }
-]
+  { name: "To Pay", value: 3450, color: "#0ea5e9" },
+  { name: "To Collect", value: 2000, color: "#9333ea" },
+];
 
 const barData = [
-  { 
+  {
     label: "Total pending",
     value: 9260,
     color: "#0ea5e9",
     icon: FaMoneyBillWave,
-    bgColor: "bg-blue-100"
+    bgColor: "bg-blue-100",
+    w : '80%'
   },
-  { 
+  {
     label: "To collect",
     value: 9260,
     color: "#9333ea",
     icon: RiMoneyDollarCircleLine,
-    bgColor: "bg-purple-100"
+    bgColor: "bg-purple-100",
+    w : '60%'
   },
-  { 
+  {
     label: "To pay",
     value: 9260,
     color: "#0d9488",
     icon: BsCashStack,
-    bgColor: "bg-teal-100"
-  }
-]
+    bgColor: "bg-teal-100",
+    w : '40%'
+  },
+];
 
 export default function Component() {
-  const [timeRange, setTimeRange] = useState(timeRanges[0])
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(null)
+  const [timeRange, setTimeRange] = useState(timeRanges[0]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const total = donutData.reduce((sum, item) => sum + item.value, 0)
+  const total = donutData.reduce((sum, item) => sum + item.value, 0);
 
   return (
     <div className="w-full mt-8 max-w-xl ">
@@ -64,8 +67,8 @@ export default function Component() {
                     key={range}
                     className="w-full text-xs px-4 py-2 text-left hover:bg-gray-100"
                     onClick={() => {
-                      setTimeRange(range)
-                      setIsDropdownOpen(false)
+                      setTimeRange(range);
+                      setIsDropdownOpen(false);
                     }}
                   >
                     {range}
@@ -94,7 +97,9 @@ export default function Component() {
                     <Cell
                       key={`cell-${index}`}
                       fill={entry.color}
-                      opacity={activeIndex === null || activeIndex === index ? 1 : 0.5}
+                      opacity={
+                        activeIndex === null || activeIndex === index ? 1 : 0.5
+                      }
                     />
                   ))}
                 </Pie>
@@ -107,36 +112,39 @@ export default function Component() {
           </div>
 
           {/* Progress Bars */}
-           <div className="space-y-4">
- {barData.map((item, index) => (
-  <div key={index} className=" flex itmes-center gap-3 ">
-    <div className="flex items-center gap-2">
-      <div className={`p-2 rounded-lg ${item.bgColor}`}>
-        <item.icon className="h-4 w-4" style={{ color: item.color }} />
-      </div>
-    </div>
-    <div>
-        <div className='flex justify-between gap-2'>
-      <span className="text-[11px] text-gray-600">{item.label}</span>
-
-    <div className="text-right text-xs text-gray-600">
-      ₹{item.value.toLocaleString()}.00
-    </div>
-        </div>
-
-    <div className="h-2 w-full bg-gray-300 rounded-full overflow-hidden">
-      <div
-        className="h-full rounded-full transition-all duration-500"
-        style={{
-          width: '70%',
-          backgroundColor: item.color
-        }}
-      />
-    </div>
-    </div>
-  </div>
-))}
-</div>
+          <div className="space-y-4">
+            {barData.map((item, index) => (
+              <div key={index} className=" flex itmes-center gap-3 ">
+                <div className="flex items-center gap-2">
+                  <div className={`p-2 rounded-lg ${item.bgColor}`}>
+                    <item.icon
+                      className="h-4 w-4"
+                      style={{ color: item.color }}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between gap-2">
+                    <span className="text-[11px] text-gray-600">
+                      {item.label}
+                    </span>
+                    <div className="text-right text-xs text-gray-600">
+                      ₹{item.value.toLocaleString()}.00
+                    </div>
+                  </div>
+                  <div className="h-3 w-40 bg-gray-300 rounded-full overflow-hidden">
+                    <div
+                      className="h-full rounded-full transition-all duration-500"
+                      style={{
+                        width: item.w,
+                        backgroundColor: item.color,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Legend */}
@@ -153,39 +161,7 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 
-
-
-// <div className="space-y-4">
-// {barData.map((item, index) => (
-//   <div key={index} className=" flex itmes-center gap-3 ">
-//     <div className="flex items-center gap-2">
-//       <div className={`p-2 rounded-lg ${item.bgColor}`}>
-//         <item.icon className="h-4 w-4" style={{ color: item.color }} />
-//       </div>
-//     </div>
-//     <div>
-//         <div className='flex justify-between gap-2'>
-//       <span className="text-[11px] text-gray-600">{item.label}</span>
-
-//     <div className="text-right text-xs text-gray-600">
-//       ₹{item.value.toLocaleString()}.00
-//     </div>
-//         </div>
-
-//     <div className="h-2 w-full bg-gray-300 rounded-full overflow-hidden">
-//       <div
-//         className="h-full rounded-full transition-all duration-500"
-//         style={{
-//           width: '70%',
-//           backgroundColor: item.color
-//         }}
-//       />
-//     </div>
-//     </div>
-//   </div>
-// ))}
-// </div>
