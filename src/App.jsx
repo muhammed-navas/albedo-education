@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { NavBar } from "./components/navbar/NavBar";
 import { SearchBar } from "./components/searchBar/SearchBar";
 import { ContextProvider } from "./context/MyContext";
+import { HomePage } from "./page/home/HomePage";
 import { Mentor } from "./page/mentor/Mentor";
 import { Navigation } from "./page/navigation/NavigationFixed";
 import { Student } from "./page/students/Student";
@@ -15,9 +16,10 @@ const App = () => {
         <NavBar />
         <div className="px-2">
           <SearchBar />
-          <Student />
+          {/* <Student /> */}
           {/* <Teacher /> */}
           {/* <Mentor /> */}
+          <HomePage />
         </div>
         <Navigation />
       </div>
@@ -27,3 +29,4 @@ const App = () => {
 };
 
 export default App;
+

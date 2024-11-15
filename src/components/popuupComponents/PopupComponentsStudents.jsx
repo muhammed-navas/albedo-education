@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { TableFieldItems, TableStudentsData, TableStudentsDataWithEdit } from "../../children/table/MainTableBox";
 import { useMyContext } from "../../context/MyContext";
-import { AddButton } from "../component/Button";
+import { AddButton, AddButtonWithoutText } from "../component/Button";
 import { CurrentStatus } from "../component/CurrentStatus";
 import { DeleteWhiteBg } from "../component/DeleteWhiteBg";
 import { Edit } from "../component/Edit";
@@ -52,12 +52,14 @@ export const StudentsPersonalDetailsInPopup = () => {
 };
 
 export const StudentsPackageDetailsInPopup = () => {
+  const [packageAdd,setPackageAdd] = useState(false)
   return (
     <div className="grid grid-cols-2 gap-4 ">
       <PackageDataSmall />
       <PackageDataSmall />
       <PackageDataSmall />
       <PackageDataSmall />
+     <AddButtonWithoutText addHandle={setPackageAdd} /> 
     </div>
   );
 };
