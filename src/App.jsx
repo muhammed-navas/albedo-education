@@ -14,8 +14,8 @@ const App = () => {
       <>
       <div className="bg-gray-300 min-h-screen ">
         <NavBar />
-        <div className="px-2">
-          <SearchBar />
+        <div className="px-2 pt-16">
+          {/* <SearchBar /> */}
           {/* <Student /> */}
           {/* <Teacher /> */}
           {/* <Mentor /> */}
