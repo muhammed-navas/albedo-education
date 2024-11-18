@@ -19,9 +19,12 @@ const DataDisplayMainBox = ({ data , grid }) => {
           title={item.title}
           name={item.name}
           more={item.date}
+          img={item.img}
+          raiting={item.raiting}
           color={item.colorClass}
           grid={grid}
           btn={data?.button?.label}
+          checkSubTitle={data.boxTopHeadSection.subTitle}
         />
         ))}
         </div>

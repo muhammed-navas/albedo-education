@@ -30,6 +30,12 @@ const boxDatA = [
         "name": "Mr. Thomson",
         "date": "2024-11-01",
         "colorClass": "bg-red-500"
+      },
+      {
+        "title": "Requested delete a student",
+        "name": "Mr. Thomson",
+        "date": "2024-11-01",
+        "colorClass": "bg-red-500"
       }
     ],
     "button": {
@@ -40,26 +46,40 @@ const boxDatA = [
   {
     "boxTopHeadSection": {
       "mainTitle": "Teacher",
-      "subTitle": "Response",
-      "headers": ["Session", "Refund"]
+      "subTitle": "Feedbacks",
+      "headers": ["Teacher", "Mentor"]
     },
     "content": [
       {
-        "title": "Requested delete a student",
+        "title": "",
+        "img":'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBwcm9maWxlfGVufDB8fDB8fHww',
         "name": "Mr. Thomson",
-        "date": "2024-11-01",
+        "raiting" : 0.5,
+        "date": "(4.2) Good ",
         "colorClass": "bg-purple-500"
       },
       {
-        "title": "Requested delete a student",
+        "title": "",
+        "img":'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBwcm9maWxlfGVufDB8fDB8fHww',
         "name": "Mr. Thomson",
-        "date": "2024-11-01",
+        "raiting" : 1,
+        "date": "(4.2) Good ",
         "colorClass": "bg-blue-500"
       },
       {
-        "title": "Requested delete a student",
+        "title": "",
+        "img":'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBwcm9maWxlfGVufDB8fDB8fHww',
         "name": "Mr. Thomson",
-        "date": "2024-11-01",
+        "raiting" : 1.5,
+        "date": "(4.2) Good ",
+        "colorClass": "bg-red-500"
+      },
+      {
+        "title": "",
+        "img":'https://images.unsplash.com/photo-1651684215020-f7a5b6610f23?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbGUlMjBwcm9maWxlfGVufDB8fDB8fHww',
+        "name": "Mr. Thomson",
+        "raiting" : 1.5,
+        "date": "(4.2) Good ",
         "colorClass": "bg-red-500"
       }
     ],
@@ -94,6 +114,12 @@ const boxDatAOne = [
         "name": "Mr. Thomson",
         "date": "2024-11-01",
         "colorClass": "bg-red-500"
+      },
+      {
+        "title": "Requested delete a student",
+        "name": "Mr. Thomson",
+        "date": "2024-11-01",
+        "colorClass": "bg-red-500"
       }
     ],
     "button": {
@@ -119,6 +145,12 @@ const boxDatAOne = [
         "name": "Mr. Thomson",
         "date": "2024-11-01",
         "colorClass": "bg-blue-500"
+      },
+      {
+        "title": "Requested delete a student",
+        "name": "Mr. Thomson",
+        "date": "2024-11-01",
+        "colorClass": "bg-red-500"
       },
       {
         "title": "Requested delete a student",
@@ -168,11 +200,11 @@ export const HomePage = () => {
           <Summery />
         </div>
         {boxDatA.map((boxData, index) => (
-          <DataDisplayMainBox key={index} data={boxData} grid='1' />
+          <DataDisplayMainBox key={index} data={{ ...boxData, content: boxData.content.slice(0, 3) }} grid='1' />
         ))}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {boxDatAOne.map((boxData, index) => (
-          <DataDisplayMainBox key={index} data={boxData} grid='2' />
+          <DataDisplayMainBox key={index} data={{ ...boxData, content: boxData.content.slice(0, 3) }} grid='2' />
         ))}
         </div>
         <div className="bg-gray-200  rounded-3xl ">
